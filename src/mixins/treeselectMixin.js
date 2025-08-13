@@ -1648,7 +1648,7 @@ export default {
           if (!isRootNode) {
             parentNode.count[ALL_CHILDREN] += 1
             if (isLeaf) parentNode.count[LEAF_CHILDREN] += 1
-            if (isDisabled) parentNode.hasDisabledDescendants = true
+            if (isDisabled || normalized.hasDisabledDescendants) parentNode.hasDisabledDescendants = true
           }
 
           // Preserve previous states.
@@ -1888,7 +1888,7 @@ export default {
 
       if (node.isBranch) {
         this.traverseDescendantsBFS(node, descendant => {
-          if (!descendant.isDisabled || this.allowSelectingDisabledDescendants) {
+          if ((!descendant.isDisabled && !descendant.hasDisabledDescendants) || this.allowSelectingDisabledDescendants) {
             this.addValue(descendant)
           }
         })

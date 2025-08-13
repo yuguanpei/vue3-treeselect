@@ -1,6 +1,9 @@
 {
-  "name": "vue3-treeselect",
-  "version": "0.1.1",
+  "name": "@yuguanpei/vue3-treeselector",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.2",
   "description": "Tree select hierarchical component for vue 3 (next)",
   "main": "dist/vue3-treeselect.common.js",
   "unpkg": "dist/vue3-treeselect.umd.js",
